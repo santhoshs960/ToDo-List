@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <nav>
+                <div class="logo">
+                    <img src="#" alt="logo">
+                    <div class="title"></div>
+                </div>
+                <div class="add_project">Add Project</div>
+                <div class="add_todo">Add ToDo</div>
+            </nav>
+            <div class="content">
+
+                <div class="project">
+                    <div class="cards">
+                        
+                    </div>
+
+                    <div class="project_form hidden_form hidden">
+                        <div class="modal_header">
+                            <h3>Create new Project</h3>
+                            <button class="close">X</button>
+                        </div>
+                        <div class="modal_body">
+                            <form class="project" action="#">
+                                <div class="form_group">
+                                    <label for="name">Enter Project Title</label>
+                                    <input name="name" 
+                                           type="text" 
+                                           id="name"  
+                                           placeholder="e.g., 'Work Tasks'"  
+                                           required>
+                                </div> 
+                                <button class="submit">Create</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="todo_form hidden_form hidden">
+                        <div class="modal_header">
+                            <h3>Add Tasks</h3>
+                            <button class="close">X</button>
+                        </div>
+                        <div class="modal_body">
+                            <form class="todo" action="#">
+                                <div class="form_group">
+                                    <label for="title">Enter Title</label>
+                                    <input type="text" id="title" required>
+                                </div>
+                                <div class="form_group">
+                                    <textarea name="description" placeholder="describe your task here"></textarea>
+                                </div>
+                                <div class="form_group">
+                                    <label for="date">set your dueDate</label>
+                                    <input id="date" type="date">
+                                </div>
+                                <div class="form_group">
+                                    <p>set priority</p>
+                                    <label>
+                                        <input type="radio" name="priority" value="low" required>
+                                        Low
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="priority" value="medium" required>
+                                        Medium
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="priority" value="high" required>
+                                        High
+                                    </label>
+                                </div>
+                                <div class="form_group">
+                                    <label for="toProject">Choose project:</label>
+                                    <select name="toProject" id="toProject">
+                                        <option value="" disabled selected hidden>Click here to select a project</option>
+                                    </select>
+                                </div>
+                                <button>Create</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            &copy; santhosh
+        </footer>
+    </div>
+</body>
+</html>

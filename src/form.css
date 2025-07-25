@@ -1,0 +1,62 @@
+.modal_header {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    text-align: center;
+    align-items: center;
+}
+
+.close {
+    align-self: flex-start;
+}
+
+.project_form {
+    border: 1px solid;
+    width: 480px;
+    height: 170px;
+}
+
+.todo_form {
+    border: 1px solid;
+    width: 480px;
+}
+
+form.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+input#name,
+input#title {
+    width: 280px;
+    height: 28px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background-color: lightgray;
+    padding: 5px 10px;
+}
+
+.form_group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+form.todo {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 15px;
+    padding: 10px 0 10px 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+.add_project,
+.add_todo {
+    cursor: pointer;
+}
