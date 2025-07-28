@@ -1,10 +1,15 @@
+/* Base styles (your existing styles remain unchanged) */
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
 }
+
 .container {
     height: 100vh;
     display: flex;
@@ -19,21 +24,245 @@ main {
 footer {
     padding: 1rem;
     align-self: center;
+    color: #666;
+    font-size: 0.9rem;
 }
 
 .content {
     flex: 1;
+    overflow-y: auto;
 }
 
 nav {
     display: flex;
-    flex: .3;
+    flex: 0.3;
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
     gap: 1em;
+    background-color: #2c3e50;
+    color: white;
 }
 
 .hidden_todo {
     display: none;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.todoHead {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+/* Enhanced styles */
+/* Navigation */
+.logo {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.add_project, 
+.add_todo {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 80%;
+    text-align: center;
+}
+
+.add_project:hover, 
+.add_todo:hover {
+    background-color: #2980b9;
+}
+
+/* Projects and Todos */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project {
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.todos-container {
+    border-top: 1px solid #eee;
+}
+
+.todo-item {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 3px solid #3498db;
+}
+
+.todo-item:hover {
+    background-color: #f0f0f0;
+}
+
+.todoTitle {
+    margin: 0;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+.todoDate {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.todoDesc, .todoPriority {
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+/* Buttons */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.view {
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.9rem;
+    color: #3498db;
+}
+
+/* Forms */
+.hidden_form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.modal_header {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    text-align: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.modal_header h3 {
+    margin: 0;
+}
+
+.close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.modal_body {
+    padding: 20px;
+}
+
+.form_group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+form.project_get {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form.project_get button, 
+form.todo button {
+    padding: 8px 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form.project_get button:hover, 
+form.todo button:hover {
+    background-color: #1a252f;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    min-height: 80px;
+    resize: vertical;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.todoPriority[data-priority="high"] {
+    color: #e74c3c;
+}
+
+.todoPriority[data-priority="medium"] {
+    color: #f39c12;
+}
+
+.todoPriority[data-priority="low"] {
+    color: #2ecc71;
+}
+
+.project {
+    background: #f8f9fa;
+    border-left: 4px solid #adb5bd;
+}
+
+.project:nth-child(odd) {
+    background: #e8f4fd;
+    border-left-color: #4dabf7;
+}
+
+.project:nth-child(even) {
+    background: #f3e8ff;
+    border-left-color: #9775fa;
 }

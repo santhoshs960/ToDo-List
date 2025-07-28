@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --no-open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "watch": "webpack serve --no-open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack --config webpack.dev.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,8 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2",
     "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0"
   }
 }

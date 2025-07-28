@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
 </head>
 <body>
     <div class="container">
         <main>
             <nav>
                 <div class="logo">
-                    <img src="#" alt="logo">
-                    <div class="title"></div>
+                    <img src="Todoicon.png" alt="logo">
+                    <div class="title">TodoList</div>
                 </div>
                 <div class="add_project">Add Project</div>
                 <div class="add_todo">Add ToDo</div>
             </nav>
             <div class="content">
 
-                <div class="project">
+                <div class="projectContainer">
                     <div class="cards">
-                        
                     </div>
 
                     <div class="project_form hidden_form hidden">
@@ -29,7 +30,7 @@
                             <button class="close">X</button>
                         </div>
                         <div class="modal_body">
-                            <form class="project" action="#">
+                            <form class="project_get" action="#">
                                 <div class="form_group">
                                     <label for="name">Enter Project Title</label>
                                     <input name="name" 
@@ -91,7 +92,7 @@
             </div>
         </main>
         <footer>
-            &copy; santhosh
+            &copy;Santhosh
         </footer>
     </div>
 </body>

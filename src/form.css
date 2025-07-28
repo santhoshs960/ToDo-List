@@ -12,7 +12,6 @@
 .project_form {
     border: 1px solid;
     width: 480px;
-    height: 170px;
 }
 
 .todo_form {
@@ -52,11 +51,12 @@ form.todo {
     padding: 10px 0 10px 25px;
 }
 
-.hidden {
-    display: none;
-}
 
 .add_project,
 .add_todo {
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }

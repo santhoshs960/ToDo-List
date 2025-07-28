@@ -1,4 +1,4 @@
-import { arrStore , toggleBasedView, displayProjects} from "../App/barrel.js";
+import { arrStore , toggleBasedView, displayProjects, storeData, retrieveData} from "../App/barrel.js";
 
 
 export function updateProjectDropdown() {
@@ -55,7 +55,7 @@ const changeToggle = (function (){
             const id = parseInt(e.target.dataset.id);
             const type = e.target.dataset.type;
             
-            // Confirm before deleting
+
             if (confirm(`Are you sure you want to delete this ${type}?`)) {
                 deleteItem(type, id);
             }
@@ -67,27 +67,25 @@ export function deleteItem(itemType, id) {
     const { projects, todos } = arrStore;
     
     if (itemType === 'project') {
-        // Delete project and its associated todos
         const projectIndex = projects.findIndex(p => p.id === id);
         if (projectIndex !== -1) {
-            // Remove all todos belonging to this project
+
             const projectName = projects[projectIndex].name;
             arrStore.todos = todos.filter(todo => todo.toProject !== projectName);
             
-            // Remove the project
             projects.splice(projectIndex, 1);
+            
+            storeData("projects", projects);
+            storeData("todos", arrStore.todos);
         }
     } 
     else if (itemType === 'todo') {
-        // Delete todo from both todos array and project's storeTodo
         const todoIndex = todos.findIndex(t => t.id === id);
         if (todoIndex !== -1) {
             const todo = todos[todoIndex];
             
-            // Remove from main todos array
             todos.splice(todoIndex, 1);
             
-            // Remove from project's storeTodo
             const project = projects.find(p => p.name === todo.toProject);
             if (project) {
                 const projectTodoIndex = project.storeTodo.findIndex(t => t.id === id);
@@ -95,35 +93,11 @@ export function deleteItem(itemType, id) {
                     project.storeTodo.splice(projectTodoIndex, 1);
                 }
             }
+            
+            storeData("projects", projects);
+            storeData("todos", todos);
         }
     }
     
-    // Update the UI
     displayProjects();
 }
-
-// function storageAvailable(type) {
-//   let storage;
-//   try {
-//     storage = window[type];
-//     const x = "__storage_test__";
-//     storage.setItem(x, x);
-//     storage.removeItem(x);
-//     return true;
-//   } catch (e) {
-//     return (
-//       e instanceof DOMException &&
-//       e.name === "QuotaExceededError" &&
-//       // acknowledge QuotaExceededError only if there's something already stored
-//       storage &&
-//       storage.length !== 0
-//     );
-//   }
-// }
-
-
-// if (storageAvailable("localStorage")) {
-//   console.log(" Yippee! We can use localStorage awesomeness");
-// } else {
-//   console.log("// Too bad, no localStorage for us");
-// }

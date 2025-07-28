@@ -8,7 +8,7 @@ function getFormData(){
     forms.forEach(form => {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
-            if (form.classList == "project"){
+            if (form.classList == "project_get"){
                 const name = document.querySelector("#name").value;
                 createProject(name);
                 updateProjectDropdown();
